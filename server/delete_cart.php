@@ -6,9 +6,9 @@ if ( !isset( $_POST ) ) {
 }
 
 include_once( 'dbconnect.php' );
-$productid = ( $_POST[ 'newsid' ] );
+$productid = ( $_POST[ 'productid' ] );
 
-$sqldeletecart = "DELETE FROM `newsletter` WHERE `news_id` = '$productid'";
+$sqldeletecart = "DELETE FROM `cart` WHERE `product_id` = '$productid';";
 
 if ( $conn->query( $sqldeletecart ) === TRUE ) {
     $response = array( 'status' => 'success', 'data' => null );
